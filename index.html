@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body >
+
+    <div class="container">
+        <div class="salary-calc">
+        <h2>Salary Calculator</h2>
+        <div class="row" >
+            <input type="number" id="salary" placeholder="Enter Your Annual Salary ">
+            <button onclick="calculate()">Calculate</button>
+        </div>
+
+        <div class="list">
+        <ul id="list-left">
+            <ul>Salary per Month   </ul>
+            <ul>Salary per Week    </ul>
+            <ul>Salary per Day     </ul>
+            <ul>Salary per Hour    </ul>
+            <ul>Salary per Second  </ul>
+        </ul>
+
+        <ul class="list-right">
+            <ul id="month">-   </ul>
+            <ul id="week">-    </ul>
+            <ul id="day">-    </ul>
+            <ul id="hour"> -    </ul>
+            <ul id="second">-   </ul>
+        </ul>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        const salary=document.getElementById("salary")
+        const month=document.getElementById("month")
+        const week=document.getElementById("week")
+        const day=document.getElementById("day")
+        const hour=document.getElementById("hour")
+        const second=document.getElementById("second")
+
+        function calculate(){
+
+            if(salary.value === ''){
+    alert("You Must Enter Your Annual Salary!");
+}
+
+
+            month.textContent = parseInt(salary.value /12);
+            week.textContent = parseInt(salary.value /52);
+            day.textContent = parseInt(salary.value /365);
+            hour.textContent = parseInt(salary.value /8680);
+            second.textContent = (salary.value /525600);
+        }
+
+    </script>
+</body>
+</html>
